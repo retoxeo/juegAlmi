@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+acceso_jugador_usuario,Acceso Jugador Usuario,model_jugador,group_usuario_normal,1,1,1,1
+acceso_skin_usuario,Acceso Skin Usuario,model_skin,group_usuario_normal,1,0,0,0
+
+acceso_jugador_administrador,Acceso Jugador Administrador,model_jugador,group_administrador,1,1,1,1
+acceso_skin_administrador,Acceso Skin Administrador,model_skin,group_administrador,1,1,1,1

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="module_category_juegos" model="ir.module.category">
+        <field name="name">Juegos</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="group_usuario_normal" model="res.groups">
+        <field name="name">Usuario: Gestiona jugadores y ve skins</field>
+        <field name="category_id" ref="module_category_juegos"/>
+    </record>
+
+    <record id="group_administrador" model="res.groups">
+        <field name="name">Administrador: Gestiona jugadores y skins</field>
+        <field name="category_id" ref="module_category_juegos"/>
+    </record>
+</odoo>

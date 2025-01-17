@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="action_open_jugador" model="ir.actions.act_window">
+        <field name="name">Jugadores</field>
+        <field name="res_model">jugador</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_open_skin" model="ir.actions.act_window">
+        <field name="name">Skins</field>
+        <field name="res_model">skin</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record id="action_jugador_graph" model="ir.actions.act_window">
+        <field name="name">Estadísticas de Jugadores</field>
+        <field name="res_model">jugador</field>
+        <field name="view_mode">graph</field>
+    </record>
+
+
+    <menuitem id="menu_principal_juegalmi" name="JuegAlmi"/>
+    <menuitem id="menu_horizontal_juegalmi" name="Mis Modelos" parent="menu_principal_juegalmi"/>
+    <menuitem id="menu_vertical_jugador" name="Jugador" parent="menu_horizontal_juegalmi" action="action_open_jugador"/>
+    <menuitem id="menu_vertical_skin" name="Skin" parent="menu_horizontal_juegalmi" action="action_open_skin"/>
+    <menuitem id="menu_vertical_jugador_graph" name="Estadísticas Jugador" parent="menu_horizontal_juegalmi" action="action_jugador_graph"/> 
+</odoo>

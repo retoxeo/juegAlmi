@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_jugador_list" model="ir.ui.view">
+        <field name="name">jugador.list</field>
+        <field name="model">jugador</field>
+        <field name="arch" type="xml">
+            <list string="Jugadores">
+                <field name="nickname"/>
+                <field name="coins"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_jugador_form" model="ir.ui.view">
+        <field name="name">jugador.form</field>
+        <field name="model">jugador</field>
+        <field name="arch" type="xml">
+            <form string="Jugador">
+                <sheet>
+                    <group>
+                        <field name="partner_id" 
+                               widget="many2one" 
+                               options="{'no_create': false}" 
+                               string="Contacto" 
+                               placeholder="Selecciona o crea un contacto"/>
+                    </group>
+                    
+                    <group>
+                        <field name="nickname" placeholder="Nickname del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="password" placeholder="Contraseña del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="coins" placeholder="Coins del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="xp" placeholder="XP del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="level" placeholder="Level del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="skin_ids" widget="many2many_tags" placeholder="Selecciona las skins"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
