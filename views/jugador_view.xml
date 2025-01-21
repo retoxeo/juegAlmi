@@ -7,6 +7,8 @@
             <list string="Jugadores">
                 <field name="nickname"/>
                 <field name="coins"/>
+                <field name="xp"/>
+                <field name="level"/>
             </list>
         </field>
     </record>
@@ -24,18 +26,36 @@
                                string="Contacto" 
                                placeholder="Selecciona o crea un contacto"/>
                     </group>
-                    
-                    <group>
-                        <field name="nickname" placeholder="Nickname del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
-                        <field name="password" placeholder="Contraseña del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
-                        <field name="coins" placeholder="Coins del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
-                        <field name="xp" placeholder="XP del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
-                        <field name="level" placeholder="Level del jugador" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
-                        <field name="skin_ids" widget="many2many_tags" placeholder="Selecciona las skins"/>
+
+                    <group string="Información del Jugador" colspan="2" class="oe_title">
+                        <field name="nickname" 
+                               placeholder="Nickname del jugador" 
+                               style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="password" 
+                               password="True" 
+                               placeholder="Contraseña del jugador" 
+                               style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="coins" 
+                               placeholder="Monedas del jugador" 
+                               style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="xp" 
+                               placeholder="XP del jugador" 
+                               style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="level" 
+                               placeholder="Nivel del jugador" 
+                               style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
+                        <field name="image" 
+                               widget="image" 
+                               style="max-width: 150px;border: 1px solid #ccc; border-radius: 5px;"/>
+                    </group>
+
+                    <group string="Skins del Jugador" colspan="2">
+                        <field name="skin_ids" 
+                               widget="many2many_tags" 
+                               placeholder="Selecciona las skins"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-
 </odoo>

@@ -8,5 +8,5 @@ class Skin(models.Model):
 
     name = fields.Char(string='Name', required=True)
     price = fields.Integer(string='Price', default=0)
-    image = fields.Binary(string='Image')
+    image = fields.Image(string='Image')
 

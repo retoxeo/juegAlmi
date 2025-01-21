@@ -23,7 +23,7 @@ class Jugador(models.Model):
     xp = fields.Integer(string='XP', default=0)
     level = fields.Integer(string='Level', default=1)
     skin_ids = fields.Many2many('skin', string='Skins')
-
+    image = fields.Image(string='Image')
 
     _sql_constraints = [
         ('partner_id_uniq', 'unique(partner_id)', 'A partner can only be associated with one player.')

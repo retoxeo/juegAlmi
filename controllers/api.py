@@ -147,6 +147,7 @@ class ApiController(http.Controller):
                 'image_url': f"https://odooxeo.duckdns.org/web/image/skin/{skin.id}/image"
             })
 
+        
         return self._response('Lista de skins obtenida exitosamente', 200, skins_data)
     def _response(self, message, code, data=None):
         """

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <odoo>
     <record id="view_skin_kanban" model="ir.ui.view">
         <field name="name">skin.kanban</field>
@@ -11,16 +10,17 @@
                 <field name="image"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click skin-kanban-box" style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                        <div class="oe_kanban_global_click skin-kanban-box" style="border: 1px solid #e1e1e1; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
                             <div class="oe_kanban_image" style="text-align: center; overflow: hidden; height: 150px; width: 150px; margin: 0 auto;">
-                                <field name="image" widget="image" class="oe_avatar img-fluid" options="{'preview_image': 'image'}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"/>
+                                <field name="image" widget="image" class="oe_avatar img-fluid" options="{'preview_image': 'image'}" style="width: 100%; height: 100%; object-fit: cover;"/>
                             </div>
-                            <div class="oe_kanban_details" style="text-align: center; padding-top: 10px;">
-                                <strong style="font-size: 20px; color: #333;"><field name="name"/></strong>
-                                <div class="oe_kanban_price" style="margin-top: 5px; color: #555; font-size: 14px; font-weight: bold;">
-                                    <field name="price"/>
-                                </div>
-                            </div> 
+                            <div class="oe_kanban_details" style="text-align: center; margin-top: 15px;">
+                                <strong style="font-size: 18px; color: #333;"><field name="name"/></strong>
+                            </div>
+                            <div class="oe_kanban_price" style="text-align: center; margin-top: 10px; color: #555; font-size: 14px;">
+                                <span style="font-weight: bold; color: #444;">Monedas: </span>
+                                <span style="font-size: 16px; font-weight: bold; color: #333;"><field name="price"/></span>
+                            </div>
                         </div>
                     </t>
                 </templates>
@@ -34,10 +34,17 @@
         <field name="arch" type="xml">
             <form string="Skin">
                 <sheet>
-                    <group class="skin-form-group" style="display: flex; flex-direction: column; gap: 15px;">
-                        <field name="name" placeholder="Nombre del skin" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;"/>
-                        <field name="price" placeholder="Precio del skin" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;"/>
-                        <field name="image" widget="image" class="oe_avatar" placeholder="Imagen del skin" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
+                    <group string="Información del Skin" colspan="2" class="oe_title">
+                        <field name="name" 
+                            placeholder="Nombre del skin" 
+                            style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;"/>
+                        <field name="price" 
+                            placeholder="Precio del skin" 
+                            style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;"/>
+                        <field name="image" 
+                            widget="image" 
+                            placeholder="Imagen del skin" 
+                            style="max-width: 150px; border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
                     </group>
                 </sheet>
             </form>
