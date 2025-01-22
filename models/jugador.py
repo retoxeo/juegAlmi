@@ -21,9 +21,19 @@ class Jugador(models.Model):
     password = fields.Char(string='Password', required=True)
     coins = fields.Integer(string='Coins', default=150)
     xp = fields.Integer(string='XP', default=0)
-    level = fields.Integer(string='Level', default=1)
     skin_ids = fields.Many2many('skin', string='Skins')
     image = fields.Image(string='Image')
+
+    level = fields.Integer(
+        string='Level',
+        compute='_compute_level',
+        store=True
+    )
+
+    @api.depends('xp')
+    def _compute_level(self):
+        for record in self:
+            record.level = record.xp // 150
 
     _sql_constraints = [
         ('partner_id_uniq', 'unique(partner_id)', 'A partner can only be associated with one player.')

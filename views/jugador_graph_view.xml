@@ -5,10 +5,7 @@
         <field name="model">jugador</field>
         <field name="arch" type="xml">
             <graph string="Estadísticas de Jugadores">
-                <field name="nickname" type="row"/>
-                <field name="coins" type="measure"/>
-                <field name="xp" type="measure"/>
-                <field name="level" type="measure"/>
+
             </graph>
         </field>
     </record>
