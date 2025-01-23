@@ -15,5 +15,6 @@
         'views/jugador_view.xml',
         'views/skins_view.xml',
         'views/jugador_graph_view.xml',
+        'views/skin_graph_view.xml',
     ],
 }

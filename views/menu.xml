@@ -18,10 +18,16 @@
         <field name="view_mode">graph</field>
     </record>
 
+    <record id="action_skin_graph" model="ir.actions.act_window">
+        <field name="name">Estadísticas de Skins</field>
+        <field name="res_model">skin</field>
+        <field name="view_mode">graph</field>
+    </record>
 
     <menuitem id="menu_principal_juegalmi" name="JuegAlmi"/>
     <menuitem id="menu_horizontal_juegalmi" name="Mis Modelos" parent="menu_principal_juegalmi"/>
     <menuitem id="menu_vertical_jugador" name="Jugador" parent="menu_horizontal_juegalmi" action="action_open_jugador"/>
     <menuitem id="menu_vertical_skin" name="Skin" parent="menu_horizontal_juegalmi" action="action_open_skin"/>
-    <menuitem id="menu_vertical_jugador_graph" name="Estadísticas Jugador" parent="menu_horizontal_juegalmi" action="action_jugador_graph"/> 
+    <menuitem id="menu_vertical_jugador_graph" name="Estadísticas Jugador" parent="menu_horizontal_juegalmi" action="action_jugador_graph"/>
+    <menuitem id="menu_vertical_skin_graph" name="Estadísticas Skins" parent="menu_horizontal_juegalmi" action="action_skin_graph"/>
 </odoo>

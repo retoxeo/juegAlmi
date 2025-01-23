@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_skin_graph" model="ir.ui.view">
+        <field name="name">skin.graph</field>
+        <field name="model">skin</field>
+        <field name="arch" type="xml">
+            <graph string="Estadísticas de Skins" type="bar">
+                <field name="name" type="row"/>
+                <field name="player_count" type="measure" string="Ventas"/>
+                <field name="price" type="measure" string="Precio"/>
+            </graph>
+        </field>
+    </record>
+</odoo>
