@@ -48,14 +48,18 @@ class ApiController(http.Controller):
     def register_player(self):
         """
         Registra un nuevo jugador con nombre, correo, nickname y password
+
+
         """
         try:
+
             import json
             request_data = json.loads(request.httprequest.data)
             name = request_data.get('name')
             email = request_data.get('email')
             nickname = request_data.get('nickname')
             password = request_data.get('password')
+
 
             if not name or not email or not nickname or not password:
                 return self._response('Nombre, email, nickname y password son requeridos', 400)
@@ -218,4 +222,6 @@ class ApiController(http.Controller):
             'data': data or {}
         }
     
+
+
 
