@@ -148,7 +148,7 @@ class ApiController(http.Controller):
                 'id': skin.id,
                 'name': skin.name,
                 'price': skin.price,
-                'image_url': f"https://odooxeo.duckdns.org/web/image/skin/{skin.id}/image"
+                'image_url': f"https://odooxeo.duckdns.org/web/image/skin/{skin.id}/image.png"
             })
 
         
@@ -221,7 +221,40 @@ class ApiController(http.Controller):
             'code': code,
             'data': data or {}
         }
-    
 
+    @http.route('/api/jugador/update_password', type='json', auth='public', methods=['PUT'], csrf=False)
+    def update_player_password(self):
+        """
+        Actualiza la contraseña de un jugador dado su nickname y nueva contraseña.
+        """
+        try:
+            import json
+            request_data = json.loads(request.httprequest.data)
+            nickname = request_data.get('nickname')
+            new_password = request_data.get('new_password')
 
+            if not nickname or not new_password:
+                return self._response('Faltan parámetros nickname o new_password.', 400)
 
+            jugador = request.env['jugador'].sudo().search([('nickname', '=', nickname)], limit=1)
+
+            if not jugador:
+                return self._response(f'El jugador con nickname "{nickname}" no existe.', 404)
+
+            jugador.sudo().write({'password': new_password})
+
+            return self._response(f'Contraseña actualizada correctamente para el jugador "{nickname}".', 200)
+
+        except Exception as e:
+            return self._response('Error interno del servidor', 500, {'error': str(e)})
+
+    def _response(self, message, code, data=None):
+        """
+        Genera una respuesta estándar para las rutas del controlador.
+        """
+        return {
+            'status': 'success' if code == 200 else 'error',
+            'message': message,
+            'code': code,
+            'data': data or {}
+        }
